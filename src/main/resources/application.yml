@@ -1,5 +1,6 @@
 spring:
   application:
     name: concentrateur
-
+server:
+  port: 8020
 
