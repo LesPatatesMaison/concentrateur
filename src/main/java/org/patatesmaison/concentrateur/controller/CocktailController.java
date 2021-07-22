@@ -22,4 +22,9 @@ public class CocktailController {
     public List<CocktailDTO> getCocktailsByName(@PathVariable("cocktailName") String cocktailName) throws NotFoundException {
         return cocktailService.getCocktailsByName(cocktailName);
     }
+
+    @GetMapping("/ingredient/{ingredient}")
+    public List<CocktailDTO> getCocktailsByIngredient(@PathVariable("ingredient") String ingredient) throws NotFoundException {
+        return cocktailService.getCocktailsByIngredient(ingredient);
+    }
 }

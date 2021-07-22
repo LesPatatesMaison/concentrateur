@@ -24,4 +24,11 @@ public class CocktailService {
         DrinksDTO drinksDTO = response.getBody();
         return drinksDTO == null ? new ArrayList<>() : drinksDTO.getDrinks();
     }
+
+    public List<CocktailDTO> getCocktailsByIngredient(String ingredient) {
+        ResponseEntity<DrinksDTO> response
+                = cocktailAPIClient.call("search.php?i=" + ingredient);
+        DrinksDTO drinksDTO = response.getBody();
+        return drinksDTO == null ? new ArrayList<>() : drinksDTO.getDrinks();
+    }
 }
