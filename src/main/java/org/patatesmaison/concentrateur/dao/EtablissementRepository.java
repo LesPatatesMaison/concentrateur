@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface EtablissementRepository extends CrudRepository<Etablissement, BigInteger> {
 
-    List<Etablissement> findByName(String name);
+    List<Etablissement> findByNameContains(String name);
 
     @Override
     List<Etablissement> findAll();
