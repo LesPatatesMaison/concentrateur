@@ -25,6 +25,7 @@ public class CocktailController {
 
     @GetMapping("/ingredient/{ingredient}")
     public List<CocktailDTO> getCocktailsByIngredient(@PathVariable("ingredient") String ingredient) throws NotFoundException {
+        List<CocktailDTO> test = cocktailService.getCocktailsByIngredient(ingredient);
         return cocktailService.getCocktailsByIngredient(ingredient);
     }
 }
