@@ -3,6 +3,7 @@ package org.patatesmaison.concentrateur.controller;
 import javassist.NotFoundException;
 import org.patatesmaison.concentrateur.dto.CocktailDTO;
 import org.patatesmaison.concentrateur.entity.Etablissement;
+import org.patatesmaison.concentrateur.exception.APIException;
 import org.patatesmaison.concentrateur.service.CocktailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,11 @@ import java.util.List;
 public class CocktailController {
     @Autowired
     private CocktailService cocktailService;
+
+    @GetMapping("/id/{cocktailId}")
+    public CocktailDTO getCocktailsById(@PathVariable("cocktailId") Long cocktailId) throws APIException {
+        return cocktailService.getCocktailById(cocktailId);
+    }
 
     @GetMapping("/{cocktailName}")
     public List<CocktailDTO> getCocktailsByName(@PathVariable("cocktailName") String cocktailName) throws NotFoundException {
