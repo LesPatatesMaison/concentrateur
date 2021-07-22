@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CocktailDTO implements Serializable {
-    private Integer idDrink;
+    private int idDrink;
     private String strDrink;
     private String strInstructionsFR;
     private String strDrinkThumb;
