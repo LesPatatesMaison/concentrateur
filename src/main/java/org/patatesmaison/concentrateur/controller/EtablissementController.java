@@ -55,7 +55,7 @@ public class EtablissementController {
     })
     @GetMapping("/search")
     @ResponseStatus(code = HttpStatus.OK)
-    public List<EtablissementDTO> searchOrders(@RequestParam(value = "name", required = false) String name) throws APIException {
+    public List<EtablissementDTO> findEtablissementByName(@RequestParam(value = "name", required = false) String name) throws APIException {
         //TODO: Use a DTO
         return etablissementService.getEtablissementByName(name);
     }

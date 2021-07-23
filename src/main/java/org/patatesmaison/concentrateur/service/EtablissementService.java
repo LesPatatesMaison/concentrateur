@@ -40,7 +40,6 @@ public class EtablissementService extends EtablissementMapper {
     public List<EtablissementDTO> getEtablissementByName(String name) throws APIException {
         //TODO: Use a DTO
         List<Etablissement> etablissements = etablissementRepository.findByNameContains(name);
-
         if (etablissements == null || etablissements.isEmpty()) {
             throw new APIException(ErrorMessages.ETABLISSEMENT_NOT_FOUND, HttpStatus.NOT_FOUND);
         }
